@@ -228,6 +228,7 @@ describe("isValidOrigin", () => {
     expect(
       isValidOrigin("https://abc.*.*.a.com", "https://abc.def.xyz.a.com")
     ).toBeTruthy()
+    expect(isValidOrigin("https://*.com:*", "https://a.com:443")).toBeTruthy()
   })
 
   it("returns false if it doesn't match the pattern", () => {
